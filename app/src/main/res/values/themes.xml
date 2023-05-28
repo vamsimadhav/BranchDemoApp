@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.BranchDemoApp" parent="Base.Theme.BranchDemoApp" />
+
+    <style name="Theme.CustomSplashScreenTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/branch</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.BranchDemoApp</item>
+    </style>
 </resources>

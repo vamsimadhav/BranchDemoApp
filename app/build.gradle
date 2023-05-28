@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -30,10 +31,27 @@ android {
 
 dependencies {
 
+    def nav_version = "2.5.3"
+
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    //Splash Screen API
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
+    // Navigation API
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    //Branch SDK
+    implementation ('io.branch.sdk.android:library:5.4.0') {
+        exclude module: 'answers-shim'
+    }
+
+    //Testing API
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
 }
