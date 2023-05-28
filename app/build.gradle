@@ -48,6 +48,8 @@ dependencies {
     implementation ('io.branch.sdk.android:library:5.4.0') {
         exclude module: 'answers-shim'
     }
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+
 
     //Testing API
     testImplementation 'junit:junit:4.13.2'
