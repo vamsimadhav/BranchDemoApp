@@ -22,21 +22,23 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <!-- Branch URI scheme -->
-            <intent-filter>
-                <data android:scheme="branchdemomain" android:host="open" />
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-            </intent-filter>
-
-            <!-- Branch App Links -->
+            <!-- App Link your activity to Branch links-->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="branchdemovamsi.app.link" />
+                <data android:scheme="https"/>
+                <data android:host="branchdemovamsi-alternate.app.link"/>
+                <data android:scheme="https"/>
+                <data android:host="branchdemovamsi.app.link"/>
+            </intent-filter>
+
+            <!-- App Link your activity to Branch links-->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="demo" android:host="main"/>
             </intent-filter>
 
         </activity>

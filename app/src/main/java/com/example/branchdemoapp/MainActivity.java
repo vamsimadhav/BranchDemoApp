@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
         SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Initialize the Branch SDK
         Branch.getAutoInstance(this);
+
     }
 
     @Override
