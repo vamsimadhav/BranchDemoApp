@@ -70,7 +70,7 @@ public class ShareFragment extends Fragment {
 
         lpShare = new LinkProperties()
                 .setCampaign("shareCampaign")
-                .setCampaign("ShareAndroidDeepLink");
+                .setFeature("ShareAndroidDeepLink");
 
        shareLink.setOnClickListener(view1 -> shareSheetDeepLink());
        shareButton.setOnClickListener(view12 -> {
