@@ -1,4 +1,4 @@
-package com.example.branchdemoapp;
+package com.example.branchdemoapp.Activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import androidx.core.splashscreen.SplashScreen;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 
+import com.example.branchdemoapp.R;
 import com.google.android.material.button.MaterialButton;
 
 import io.branch.indexing.BranchUniversalObject;

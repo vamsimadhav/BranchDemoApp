@@ -7,16 +7,19 @@
 
     <fragment
         android:id="@+id/optionsFragment"
-        android:name="com.example.branchdemoapp.OptionsFragment"
+        android:name="com.example.branchdemoapp.Fragments.OptionsFragment"
         android:label="fragment_options"
         tools:layout="@layout/fragment_options" >
         <action
             android:id="@+id/action_optionsFragment_to_shareFragment"
             app:destination="@id/shareFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_shoppingActivity"
+            app:destination="@id/shoppingActivity" />
     </fragment>
     <fragment
         android:id="@+id/shareFragment"
-        android:name="com.example.branchdemoapp.ShareFragment"
+        android:name="com.example.branchdemoapp.Fragments.ShareFragment"
         android:label="fragment_share"
         tools:layout="@layout/fragment_share">
         <action
@@ -28,4 +31,9 @@
             app:action="ACTION_VIEW"
             app:uri="https://branchdemovamsi.app.link/sfl" />
     </fragment>
+    <activity
+        android:id="@+id/shoppingActivity"
+        android:name="com.example.branchdemoapp.Activitys.ShoppingActivity"
+        android:label="activity_shopping"
+        tools:layout="@layout/activity_shopping" />
 </navigation>

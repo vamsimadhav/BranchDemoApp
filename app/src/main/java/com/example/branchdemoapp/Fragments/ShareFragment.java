@@ -1,4 +1,4 @@
-package com.example.branchdemoapp;
+package com.example.branchdemoapp.Fragments;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.branchdemoapp.Helper;
+import com.example.branchdemoapp.R;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.List;

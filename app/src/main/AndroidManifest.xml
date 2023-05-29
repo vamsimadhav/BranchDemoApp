@@ -16,7 +16,7 @@
         android:theme="@style/Theme.CustomSplashScreenTheme"
         tools:targetApi="33">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activitys.MainActivity"
             android:launchMode="singleTask"
             android:exported="true">
 
@@ -46,6 +46,10 @@
             <nav-graph android:value="@navigation/nav_graph" />
 
         </activity>
+
+        <activity android:name =".Activitys.ShoppingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DayNight.NoActionBar"/>
 
         <!-- Branch init -->
         <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_exjhLozOYkDgehiHDSq0SgdeCFnd9sfi" />

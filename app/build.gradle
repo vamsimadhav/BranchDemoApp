@@ -37,6 +37,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
+    //Grid layout
+    implementation "androidx.gridlayout:gridlayout:1.0.0"
+
     //Splash Screen API
     implementation 'androidx.core:core-splashscreen:1.0.1'
 
@@ -48,8 +51,9 @@ dependencies {
     implementation ('io.branch.sdk.android:library:5.4.0') {
         exclude module: 'answers-shim'
     }
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
 
+    //Retrofit
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
 
     //Testing API
     testImplementation 'junit:junit:4.13.2'

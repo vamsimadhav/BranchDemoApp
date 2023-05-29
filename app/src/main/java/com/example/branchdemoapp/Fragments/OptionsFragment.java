@@ -1,4 +1,4 @@
-package com.example.branchdemoapp;
+package com.example.branchdemoapp.Fragments;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.branchdemoapp.R;
 import com.google.android.material.button.MaterialButton;
 
 import io.branch.referral.util.BRANCH_STANDARD_EVENT;
@@ -32,10 +33,16 @@ public class OptionsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         MaterialButton shareLinkButton = getActivity().findViewById(R.id.shareLink);
+        MaterialButton shoppingButton = getActivity().findViewById(R.id.shopping);
 
         shareLinkButton.setOnClickListener(view12 -> {
             Navigation.findNavController(view12).navigate(R.id.shareFragment);
-
+        });
+        shoppingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.shoppingActivity);
+            }
         });
 
     }
