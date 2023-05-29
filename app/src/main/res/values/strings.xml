@@ -5,4 +5,7 @@
     <string name="get_qr_code">Get QR Code</string>
     <string name="share_qr_code">Share QR Code</string>
     <string name="share_deep_link">Share Deep Link</string>
+    <string name="share_qr">Share QR</string>
+    <string name="share_using_branch_s_inbuilt_share_sheet">Share using Branch\'s inbuilt Share Sheet</string>
+    <string name="share_using_android_custom_share">Share using Android Custom Share</string>
 </resources>

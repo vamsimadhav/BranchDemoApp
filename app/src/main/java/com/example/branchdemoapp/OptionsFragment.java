@@ -34,9 +34,9 @@ public class OptionsFragment extends Fragment {
         qrButton = getActivity().findViewById(R.id.qrButton);
         shareLinkButton = getActivity().findViewById(R.id.shareLink);
 
-        qrButton.setOnClickListener(view1 -> {
-
-        });
+//        qrButton.setOnClickListener(view1 -> {
+//            Navigation.findNavController(view1).navigate(R.id.QRFragment);
+//        });
 
         shareLinkButton.setOnClickListener(view12 -> {
             Navigation.findNavController(view12).navigate(R.id.shareFragment);

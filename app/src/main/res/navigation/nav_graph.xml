@@ -18,9 +18,14 @@
         android:id="@+id/shareFragment"
         android:name="com.example.branchdemoapp.ShareFragment"
         android:label="fragment_share"
-        tools:layout="@layout/fragment_share" >
+        tools:layout="@layout/fragment_share">
         <action
             android:id="@+id/action_shareFragment_to_optionsFragment"
             app:destination="@id/optionsFragment" />
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:action="ACTION_VIEW"
+            app:uri="https://branchdemovamsi.app.link/sfl" />
     </fragment>
 </navigation>
