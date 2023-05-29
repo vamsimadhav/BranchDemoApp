@@ -23,6 +23,8 @@ import io.branch.indexing.BranchUniversalObject;
 import io.branch.referral.Branch;
 import io.branch.referral.BranchError;
 import io.branch.referral.SharingHelper;
+import io.branch.referral.util.BRANCH_STANDARD_EVENT;
+import io.branch.referral.util.BranchEvent;
 import io.branch.referral.util.LinkProperties;
 import io.branch.referral.util.ShareSheetStyle;
 
@@ -69,7 +71,14 @@ public class ShareFragment extends Fragment {
                 .setCampaign("ShareAndroidDeepLink");
 
        shareLink.setOnClickListener(view1 -> shareSheetDeepLink());
-       shareButton.setOnClickListener(view2 -> createShareDeepLink());
+       shareButton.setOnClickListener(view12 -> {
+           createShareDeepLink();
+           //Share Event in Live View
+           new BranchEvent(BRANCH_STANDARD_EVENT.SHARE)
+                   .addContentItems(buoShare)
+                   .setDescription("Android_Share_Event")
+                   .logEvent(getContext());
+       });
     }
 
     private void createShareDeepLink() {

@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 
 import com.google.android.material.button.MaterialButton;
 
-public class OptionsFragment extends Fragment {
+import io.branch.referral.util.BRANCH_STANDARD_EVENT;
+import io.branch.referral.util.BranchEvent;
 
-    private MaterialButton qrButton;
-    private MaterialButton shareLinkButton;
+public class OptionsFragment extends Fragment {
     public OptionsFragment() {
         // Required empty public constructor
     }
@@ -31,15 +31,11 @@ public class OptionsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        qrButton = getActivity().findViewById(R.id.qrButton);
-        shareLinkButton = getActivity().findViewById(R.id.shareLink);
-
-//        qrButton.setOnClickListener(view1 -> {
-//            Navigation.findNavController(view1).navigate(R.id.QRFragment);
-//        });
+        MaterialButton shareLinkButton = getActivity().findViewById(R.id.shareLink);
 
         shareLinkButton.setOnClickListener(view12 -> {
             Navigation.findNavController(view12).navigate(R.id.shareFragment);
+
         });
 
     }
