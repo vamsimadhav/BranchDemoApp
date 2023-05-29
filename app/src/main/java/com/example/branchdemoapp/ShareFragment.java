@@ -50,7 +50,7 @@ public class ShareFragment extends Fragment {
        buoShareSheet = new BranchUniversalObject()
                .setTitle("Share Sheet Deep Link")
                .setCanonicalIdentifier("shareSheet/deeplink")
-               .setContentDescription(Helper.downloadText)
+               .setContentDescription(Helper.shareSheetText)
                .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC);
 
         lpShareSheet = new LinkProperties()
@@ -61,7 +61,7 @@ public class ShareFragment extends Fragment {
         buoShare = new BranchUniversalObject()
                 .setTitle("Share Android Deep Link")
                 .setCanonicalIdentifier("shareAndroid/deeplink")
-                .setContentDescription(Helper.downloadText)
+                .setContentDescription(Helper.shareAndroidText)
                 .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC);
 
         lpShare = new LinkProperties()
