@@ -3,11 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/QRFragment">
+    app:startDestination="@id/optionsFragment">
 
     <fragment
-        android:id="@+id/QRFragment"
+        android:id="@+id/optionsFragment"
+        android:name="com.example.branchdemoapp.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_optionsFragment_to_shareFragment"
+            app:destination="@id/shareFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shareFragment"
         android:name="com.example.branchdemoapp.ShareFragment"
-        android:label="fragment_qr"
-        tools:layout="@layout/fragment_share" />
+        android:label="fragment_share"
+        tools:layout="@layout/fragment_share" >
+        <action
+            android:id="@+id/action_shareFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
 </navigation>

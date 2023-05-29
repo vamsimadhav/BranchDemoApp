@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.fragment.app.FragmentManager;
+import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -24,6 +26,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Initialize the Branch SDK
         Branch.getAutoInstance(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int backStackEntryCount = fragmentManager.getBackStackEntryCount();
+
+        if (backStackEntryCount > 0) {
+            // If there are fragments in the back stack, pop the back stack
+            fragmentManager.popBackStack();
+        } else {
+            // If there are no fragments in the back stack, perform the default back button behavior
+            super.onBackPressed();
+        }
+
     }
 
     @Override
