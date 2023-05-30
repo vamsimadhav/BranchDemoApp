@@ -1,4 +1,4 @@
-package com.example.branchdemoapp;
+package com.example.branchdemoapp.Fragments;
 
 import android.os.Bundle;
 
@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.branchdemoapp.Models.ShopModel;
+import com.example.branchdemoapp.R;
 
 import io.branch.indexing.BranchUniversalObject;
 import io.branch.referral.util.BRANCH_STANDARD_EVENT;

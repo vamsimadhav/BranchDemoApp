@@ -7,15 +7,26 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.branchdemoapp.Networking.ApiCompletionCallback;
+import com.example.branchdemoapp.Networking.ApiHelper;
 import com.example.branchdemoapp.R;
 import com.google.android.material.button.MaterialButton;
 
+import java.io.IOException;
+
 import io.branch.referral.util.BRANCH_STANDARD_EVENT;
 import io.branch.referral.util.BranchEvent;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class OptionsFragment extends Fragment {
     public OptionsFragment() {
@@ -41,9 +52,26 @@ public class OptionsFragment extends Fragment {
         shoppingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.shoppingActivity);
+                sendApiEvent(view);
             }
         });
 
     }
+
+    private void sendApiEvent(View view) {
+        ApiHelper.sendStandardEvent(getContext(), new ApiCompletionCallback() {
+            @Override
+            public void onCompletion(boolean success) {
+                if(success){
+                    Navigation.findNavController(view).navigate(R.id.shoppingActivity);
+                    Toast.makeText(getContext(),"Event Success",Toast.LENGTH_SHORT).show();
+                } else{
+                    Navigation.findNavController(view).navigate(R.id.shoppingActivity);
+                    Toast.makeText(getContext(),"Event Failed",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+
 }

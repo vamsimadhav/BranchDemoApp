@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mensDressFragment"
-        android:name="com.example.branchdemoapp.GridDressFragment"
+        android:name="com.example.branchdemoapp.Fragments.GridDressFragment"
         android:label="fragment_mens_dress"
         tools:layout="@layout/fragment_dress_grid" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/dressFragment"
-        android:name="com.example.branchdemoapp.DressFragment"
+        android:name="com.example.branchdemoapp.Fragments.DressFragment"
         android:label="fragment_dress"
         tools:layout="@layout/fragment_dress" >
 

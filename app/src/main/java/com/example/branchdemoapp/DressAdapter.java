@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.branchdemoapp.Fragments.DressFragmentArgs;
 import com.example.branchdemoapp.Models.ShopModel;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class DressAdapter extends ArrayAdapter<ShopModel> {
         String cost = "₹ " + shopModel.getDressCost();
         dressCost.setText(cost);
         listItemView.setOnClickListener(view -> {
-            Bundle args = new DressFragmentArgs.Builder(shopModel).build().toBundle();
+            Bundle args = new com.example.branchdemoapp.Fragments.DressFragmentArgs.Builder(shopModel).build().toBundle();
             NavController controller = Navigation.findNavController(view);
             controller.navigate(R.id.dressFragment,args);
         });

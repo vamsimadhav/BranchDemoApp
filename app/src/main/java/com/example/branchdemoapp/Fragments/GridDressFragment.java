@@ -1,4 +1,4 @@
-package com.example.branchdemoapp;
+package com.example.branchdemoapp.Fragments;
 
 import android.os.Bundle;
 
@@ -12,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import com.example.branchdemoapp.DressAdapter;
 import com.example.branchdemoapp.Models.ShopModel;
+import com.example.branchdemoapp.R;
 
 import java.util.ArrayList;
 
