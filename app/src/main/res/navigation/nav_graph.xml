@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_optionsFragment_to_shoppingActivity"
             app:destination="@id/shoppingActivity" />
+        <action
+            android:id="@+id/action_optionsFragment_to_displayDeepLink"
+            app:destination="@id/displayDeepLink" />
     </fragment>
     <fragment
         android:id="@+id/shareFragment"
@@ -36,4 +39,9 @@
         android:name="com.example.branchdemoapp.Activitys.ShoppingActivity"
         android:label="activity_shopping"
         tools:layout="@layout/activity_shopping" />
+    <fragment
+        android:id="@+id/displayDeepLink"
+        android:name="com.example.branchdemoapp.Activitys.DisplayDeepLink"
+        android:label="fragment_display_deep_link"
+        tools:layout="@layout/fragment_display_deep_link" />
 </navigation>

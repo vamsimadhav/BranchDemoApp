@@ -4,13 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.branchdemoapp.R;
 import com.google.android.material.button.MaterialButton;
+
+import org.json.JSONException;
 
 import io.branch.indexing.BranchUniversalObject;
 import io.branch.referral.Branch;
@@ -53,11 +60,28 @@ public class MainActivity extends AppCompatActivity {
         // Branch init
         branch.initSession((referringParams, error) -> {
             if (error == null) {
+                String pos = referringParams.optString("$deeplink_path");
+                navigateToFragment(pos);
+
                 Log.i("BRANCH SDK", referringParams.toString());
             } else {
                 Log.i("BRANCH SDK", error.getMessage());
             }
         }, this.getIntent().getData(), this);
+    }
+
+    private void navigateToFragment(String pos) {
+          if(pos != ""){
+              FragmentManager fragmentManager = getSupportFragmentManager();
+              NavHostFragment navHostFragment = (NavHostFragment) fragmentManager.findFragmentById(R.id.nav_host);
+
+              if (navHostFragment != null) {
+                  NavController navController = navHostFragment.getNavController();
+                  Bundle args = new Bundle();
+                  args.putString("pos", pos);
+                  navController.navigate(R.id.displayDeepLink, args);
+              }
+          }
     }
 
     @Override

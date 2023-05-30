@@ -23,6 +23,7 @@ import io.branch.referral.util.CurrencyType;
 
 public class DressFragment extends Fragment {
 
+    private int pos = -1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,19 +35,30 @@ public class DressFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        DressFragmentArgs args = DressFragmentArgs.fromBundle(getArguments());
-
-        ShopModel shopModel = args.getShopModel();
 
         ImageView dressImage = getActivity().findViewById(R.id.imageView);
         TextView dressName = getActivity().findViewById(R.id.textName);
         TextView dressCost = getActivity().findViewById(R.id.textCost);
         Button addToCart = getActivity().findViewById(R.id.addToCart);
 
-        dressImage.setImageDrawable(shopModel.getDressImage());
-        dressName.setText(shopModel.getDressName());
-        String cost = "₹ " + shopModel.getDressCost();
-        dressCost.setText(cost);
+        Bundle bundle = getArguments();
+        if(bundle.containsKey("pos")){
+            pos = Integer.parseInt(bundle.getString("pos"));
+        }
+        DressFragmentArgs args = DressFragmentArgs.fromBundle(getArguments());
+
+        ShopModel shopModel = args.getShopModel();
+//
+//
+//
+//        dressImage.setImageDrawable(shopModel.getDressImage());
+//        dressName.setText(shopModel.getDressName());
+//        String cost = "₹ " + shopModel.getDressCost();
+//        dressCost.setText(cost);
+        if(pos != -1){
+            dressName.setText(pos);
+        }
+
 
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
