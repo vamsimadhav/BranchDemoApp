@@ -7,36 +7,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.branchdemoapp.Networking.ApiCompletionCallback;
 import com.example.branchdemoapp.Networking.ApiHelper;
 import com.example.branchdemoapp.R;
 import com.google.android.material.button.MaterialButton;
 
-import java.io.IOException;
-
-import io.branch.referral.util.BRANCH_STANDARD_EVENT;
-import io.branch.referral.util.BranchEvent;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-
 public class OptionsFragment extends Fragment {
-    public OptionsFragment() {
-        // Required empty public constructor
-    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_options, container, false);
     }
 
@@ -50,24 +33,19 @@ public class OptionsFragment extends Fragment {
             Navigation.findNavController(view12).navigate(R.id.shareFragment);
         });
         shoppingButton.setOnClickListener(this::sendApiEvent);
-
     }
 
     private void sendApiEvent(View view) {
-        ApiHelper.sendStandardEvent(getContext(), new ApiCompletionCallback() {
-            @Override
-            public void onCompletion(boolean success) {
-                Bundle args = new Bundle();
-                args.putString("pos","-1");
-                if(success){
-                    Toast.makeText(getContext(),"Event Success",Toast.LENGTH_SHORT).show();
-                } else{
-                    Toast.makeText(getContext(),"Event Failed",Toast.LENGTH_SHORT).show();
-                }
-                Navigation.findNavController(view).navigate(R.id.gridDressFragment,args);
+
+        ApiHelper.sendStandardEvent(getContext(), success -> {
+            Bundle args = new Bundle();
+            args.putString("pos","-1");
+            if(success){
+                Toast.makeText(getContext(),"API Event Success",Toast.LENGTH_SHORT).show();
+            } else{
+                Toast.makeText(getContext(),"API Event Failed",Toast.LENGTH_SHORT).show();
             }
+            Navigation.findNavController(view).navigate(R.id.gridDressFragment,args);
         });
     }
-
-
 }

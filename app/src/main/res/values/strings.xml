@@ -9,4 +9,5 @@
     <string name="share_using_branch_s_inbuilt_share_sheet">Share using Branch\'s inbuilt Share Sheet</string>
     <string name="share_using_android_custom_share">Share using Android Custom Share</string>
     <string name="shopping_app">Shopping App</string>
+    <string name="share_app_link">Share App Link</string>
 </resources>

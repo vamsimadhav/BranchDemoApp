@@ -4,6 +4,9 @@ import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
 
+import com.example.branchdemoapp.Networking.Interface.ApiCompletionCallback;
+import com.example.branchdemoapp.Networking.Interface.ApiInterface;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,7 +22,7 @@ public class ApiHelper {
     private static final String branchKey = "key_live_exjhLozOYkDgehiHDSq0SgdeCFnd9sfi";
     private static final String androidVersion =  Build.VERSION.RELEASE;
 
-    public static void sendStandardEvent(Context context,ApiCompletionCallback callback){
+    public static void sendStandardEvent(Context context, ApiCompletionCallback callback){
         String androidId = Settings.Secure.getString(context.getContentResolver(),
                 Settings.Secure.ANDROID_ID);
 

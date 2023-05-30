@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         Branch branch = Branch.getInstance();
-
         // Branch init
         branch.initSession((referringParams, error) -> {
             if (error == null) {
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void navigateToFragment(String pos) {
-          if(pos != ""){
+          if(!pos.equals("")){
               FragmentManager fragmentManager = getSupportFragmentManager();
               NavHostFragment navHostFragment = (NavHostFragment) fragmentManager.findFragmentById(R.id.nav_host);
 

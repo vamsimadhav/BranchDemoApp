@@ -96,7 +96,6 @@ public class ShareFragment extends Fragment {
         ShareSheetStyle shareSheetStyle = new ShareSheetStyle(getActivity(), "Check this out!", "This stuff is awesome: ")
                 .setCopyUrlStyle(ContextCompat.getDrawable(getContext(),android.R.drawable.ic_menu_send), "Copy", "Added to clipboard")
                 .setMoreOptionStyle(ContextCompat.getDrawable(getContext(),android.R.drawable.ic_menu_search), "Show more")
-//                .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
                 .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
                 .addPreferredSharingOption(SharingHelper.SHARE_WITH.MESSAGE)
                 .setAsFullWidthStyle(true)

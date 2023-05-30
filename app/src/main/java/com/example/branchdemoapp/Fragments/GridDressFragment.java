@@ -21,31 +21,25 @@ import java.util.ArrayList;
 
 public class GridDressFragment extends Fragment {
 
-    private GridView dressGrid;
-
-    public GridDressFragment() {
-        // Required empty public constructor
-    }
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_dress_grid, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        dressGrid = getActivity().findViewById(R.id.gridView);
-
-        ArrayList<ShopModel> shopModelArrayList = new ArrayList<>();
+        //Variable To See if navigated from DeepLink
         int pos = -1;
 
         Bundle args = getArguments();
         if(args.containsKey("pos")){
-          pos = Integer.parseInt(args.getString("pos"));
+            pos = Integer.parseInt(args.getString("pos"));
         }
+
+        GridView dressGrid = getActivity().findViewById(R.id.gridView);
+
+        ArrayList<ShopModel> shopModelArrayList = new ArrayList<>();
 
         shopModelArrayList.add(new ShopModel(ContextCompat.getDrawable(getContext(),R.drawable.dress1),"EYEBOGLER",182));
         shopModelArrayList.add(new ShopModel(ContextCompat.getDrawable(getContext(),R.drawable.dress2),"KRYPTIC",465));

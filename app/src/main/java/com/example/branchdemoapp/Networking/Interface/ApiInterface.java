@@ -1,4 +1,4 @@
-package com.example.branchdemoapp.Networking;
+package com.example.branchdemoapp.Networking.Interface;
 
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;

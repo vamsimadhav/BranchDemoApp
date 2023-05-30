@@ -14,9 +14,6 @@
             android:id="@+id/action_optionsFragment_to_shareFragment"
             app:destination="@id/shareFragment" />
         <action
-            android:id="@+id/action_optionsFragment_to_displayDeepLink"
-            app:destination="@id/displayDeepLink" />
-        <action
             android:id="@+id/action_optionsFragment_to_gridDressFragment"
             app:destination="@id/gridDressFragment" />
 
@@ -36,11 +33,6 @@
             app:uri="https://branchdemovamsi.app.link/sfl" />
     </fragment>
     <fragment
-        android:id="@+id/displayDeepLink"
-        android:name="com.example.branchdemoapp.Activitys.DisplayDeepLink"
-        android:label="fragment_display_deep_link"
-        tools:layout="@layout/fragment_display_deep_link" />
-    <fragment
         android:id="@+id/dressFragment"
         android:name="com.example.branchdemoapp.Fragments.DressFragment"
         android:label="fragment_dress"
@@ -48,6 +40,9 @@
         <argument
             android:name="shopModel"
             app:argType="com.example.branchdemoapp.Models.ShopModel" />
+        <action
+            android:id="@+id/action_dressFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/gridDressFragment"
