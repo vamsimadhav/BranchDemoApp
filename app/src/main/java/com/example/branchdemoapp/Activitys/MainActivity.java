@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                   NavController navController = navHostFragment.getNavController();
                   Bundle args = new Bundle();
                   args.putString("pos", pos);
-                  navController.navigate(R.id.displayDeepLink, args);
+                  navController.navigate(R.id.gridDressFragment, args);
               }
           }
     }

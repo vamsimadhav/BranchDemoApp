@@ -39,8 +39,13 @@ public class GridDressFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         dressGrid = getActivity().findViewById(R.id.gridView);
 
-
         ArrayList<ShopModel> shopModelArrayList = new ArrayList<>();
+        int pos = -1;
+
+        Bundle args = getArguments();
+        if(args.containsKey("pos")){
+          pos = Integer.parseInt(args.getString("pos"));
+        }
 
         shopModelArrayList.add(new ShopModel(ContextCompat.getDrawable(getContext(),R.drawable.dress1),"EYEBOGLER",182));
         shopModelArrayList.add(new ShopModel(ContextCompat.getDrawable(getContext(),R.drawable.dress2),"KRYPTIC",465));
@@ -61,7 +66,7 @@ public class GridDressFragment extends Fragment {
         shopModelArrayList.add(new ShopModel(ContextCompat.getDrawable(getContext(),R.drawable.dress2),"KRYPTIC",465));
         shopModelArrayList.add(new ShopModel(ContextCompat.getDrawable(getContext(),R.drawable.dress3),"CAMPUS",1200));
 
-        DressAdapter adapter = new DressAdapter(getContext(),shopModelArrayList);
+        DressAdapter adapter = new DressAdapter(getContext(),shopModelArrayList,pos,getView());
         dressGrid.setAdapter(adapter);
     }
 }

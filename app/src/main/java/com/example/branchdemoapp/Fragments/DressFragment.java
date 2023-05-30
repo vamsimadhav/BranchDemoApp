@@ -23,8 +23,6 @@ import io.branch.referral.util.CurrencyType;
 
 public class DressFragment extends Fragment {
 
-    private int pos = -1;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,23 +39,14 @@ public class DressFragment extends Fragment {
         TextView dressCost = getActivity().findViewById(R.id.textCost);
         Button addToCart = getActivity().findViewById(R.id.addToCart);
 
-        Bundle bundle = getArguments();
-        if(bundle.containsKey("pos")){
-            pos = Integer.parseInt(bundle.getString("pos"));
-        }
         DressFragmentArgs args = DressFragmentArgs.fromBundle(getArguments());
 
         ShopModel shopModel = args.getShopModel();
-//
-//
-//
-//        dressImage.setImageDrawable(shopModel.getDressImage());
-//        dressName.setText(shopModel.getDressName());
-//        String cost = "₹ " + shopModel.getDressCost();
-//        dressCost.setText(cost);
-        if(pos != -1){
-            dressName.setText(pos);
-        }
+
+        dressImage.setImageDrawable(shopModel.getDressImage());
+        dressName.setText(shopModel.getDressName());
+        String cost = "₹ " + shopModel.getDressCost();
+        dressCost.setText(cost);
 
 
         addToCart.setOnClickListener(new View.OnClickListener() {

@@ -14,14 +14,20 @@ import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.branchdemoapp.Fragments.DressFragmentArgs;
 import com.example.branchdemoapp.Models.ShopModel;
 
 import java.util.List;
 
 public class DressAdapter extends ArrayAdapter<ShopModel> {
-    public DressAdapter(@NonNull Context context, @NonNull List<ShopModel> shopModelList) {
+
+    List<ShopModel> shopModelList;
+    private int pos = -1;
+    private final View view;
+    public DressAdapter(@NonNull Context context, @NonNull List<ShopModel> shopModelList,int pos,View view) {
         super(context, 0, shopModelList);
+        this.shopModelList = shopModelList;
+        this.pos = pos;
+        this.view = view;
     }
 
     @NonNull
@@ -41,10 +47,15 @@ public class DressAdapter extends ArrayAdapter<ShopModel> {
         dressName.setText(shopModel.getDressName());
         String cost = "₹ " + shopModel.getDressCost();
         dressCost.setText(cost);
-        listItemView.setOnClickListener(view -> {
-            Bundle args = new com.example.branchdemoapp.Fragments.DressFragmentArgs.Builder(shopModel).build().toBundle();
+        if(pos != -1){
+            Bundle args = new com.example.branchdemoapp.Fragments.DressFragmentArgs.Builder(shopModelList.get(pos)).build().toBundle();
             NavController controller = Navigation.findNavController(view);
             controller.navigate(R.id.dressFragment,args);
+        }
+        listItemView.setOnClickListener(view -> {
+                Bundle args = new com.example.branchdemoapp.Fragments.DressFragmentArgs.Builder(shopModel).build().toBundle();
+                NavController controller = Navigation.findNavController(view);
+                controller.navigate(R.id.dressFragment,args);
         });
 
         return listItemView;

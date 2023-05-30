@@ -49,12 +49,7 @@ public class OptionsFragment extends Fragment {
         shareLinkButton.setOnClickListener(view12 -> {
             Navigation.findNavController(view12).navigate(R.id.shareFragment);
         });
-        shoppingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendApiEvent(view);
-            }
-        });
+        shoppingButton.setOnClickListener(this::sendApiEvent);
 
     }
 
@@ -62,13 +57,14 @@ public class OptionsFragment extends Fragment {
         ApiHelper.sendStandardEvent(getContext(), new ApiCompletionCallback() {
             @Override
             public void onCompletion(boolean success) {
+                Bundle args = new Bundle();
+                args.putString("pos","-1");
                 if(success){
-                    Navigation.findNavController(view).navigate(R.id.shoppingActivity);
                     Toast.makeText(getContext(),"Event Success",Toast.LENGTH_SHORT).show();
                 } else{
-                    Navigation.findNavController(view).navigate(R.id.shoppingActivity);
                     Toast.makeText(getContext(),"Event Failed",Toast.LENGTH_SHORT).show();
                 }
+                Navigation.findNavController(view).navigate(R.id.gridDressFragment,args);
             }
         });
     }

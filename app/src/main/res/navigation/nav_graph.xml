@@ -14,11 +14,12 @@
             android:id="@+id/action_optionsFragment_to_shareFragment"
             app:destination="@id/shareFragment" />
         <action
-            android:id="@+id/action_optionsFragment_to_shoppingActivity"
-            app:destination="@id/shoppingActivity" />
-        <action
             android:id="@+id/action_optionsFragment_to_displayDeepLink"
             app:destination="@id/displayDeepLink" />
+        <action
+            android:id="@+id/action_optionsFragment_to_gridDressFragment"
+            app:destination="@id/gridDressFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/shareFragment"
@@ -34,14 +35,27 @@
             app:action="ACTION_VIEW"
             app:uri="https://branchdemovamsi.app.link/sfl" />
     </fragment>
-    <activity
-        android:id="@+id/shoppingActivity"
-        android:name="com.example.branchdemoapp.Activitys.ShoppingActivity"
-        android:label="activity_shopping"
-        tools:layout="@layout/activity_shopping" />
     <fragment
         android:id="@+id/displayDeepLink"
         android:name="com.example.branchdemoapp.Activitys.DisplayDeepLink"
         android:label="fragment_display_deep_link"
         tools:layout="@layout/fragment_display_deep_link" />
+    <fragment
+        android:id="@+id/dressFragment"
+        android:name="com.example.branchdemoapp.Fragments.DressFragment"
+        android:label="fragment_dress"
+        tools:layout="@layout/fragment_dress" >
+        <argument
+            android:name="shopModel"
+            app:argType="com.example.branchdemoapp.Models.ShopModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/gridDressFragment"
+        android:name="com.example.branchdemoapp.Fragments.GridDressFragment"
+        android:label="fragment_dress_grid"
+        tools:layout="@layout/fragment_dress_grid" >
+        <action
+            android:id="@+id/action_gridDressFragment_to_dressFragment2"
+            app:destination="@id/dressFragment" />
+    </fragment>
 </navigation>
