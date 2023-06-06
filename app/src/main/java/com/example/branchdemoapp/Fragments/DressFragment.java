@@ -35,7 +35,6 @@ public class DressFragment extends Fragment {
         TextView dressName = getActivity().findViewById(R.id.textName);
         TextView dressCost = getActivity().findViewById(R.id.textCost);
         Button addToCart = getActivity().findViewById(R.id.addToCart);
-        Button backButton =  getActivity().findViewById(R.id.backButton);
 
         DressFragmentArgs args = DressFragmentArgs.fromBundle(getArguments());
         ShopModel shopModel = args.getShopModel();
@@ -65,8 +64,7 @@ public class DressFragment extends Fragment {
             addToCart.setEnabled(false);
 
             Toast.makeText(getContext(),"Add to Cart Tracked", Toast.LENGTH_SHORT).show();
+            Navigation.findNavController(getView()).navigate(R.id.optionsFragment);
         });
-
-        backButton.setOnClickListener(view12 -> Navigation.findNavController(getView()).navigate(R.id.optionsFragment));
     }
 }
